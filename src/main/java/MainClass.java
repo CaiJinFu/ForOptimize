@@ -7,15 +7,15 @@ import java.util.List;
  */
 public class MainClass {
   public static void main(String[] args) {
-    //    unoptimized();
-    //    optimizeOne();
-    //    optimizeTwo();
-    //    optimizeThree();
-    //    optimizeFour();
-    //    outBig();
-    //    innerBig();
-    //    catchInner();
-    //    catchOuter();
+    unoptimized();
+    optimizeOne();
+    optimizeTwo();
+    optimizeThree();
+    optimizeFour();
+    outBig();
+    innerBig();
+    catchInner();
+    catchOuter();
     calculationInner();
     calculationOuter();
   }
@@ -116,9 +116,7 @@ public class MainClass {
     System.out.println("在外部捕获异常耗时：" + (endTime - stratTime));
   }
 
-  /**
-   * 未提取无关的表达式
-   */
+  /** 未提取无关的表达式 */
   private static void calculationInner() {
     int a = 3;
     int b = 7;
@@ -130,9 +128,7 @@ public class MainClass {
     System.out.println("未提取耗时：" + (endTime - stratTime));
   }
 
-  /**
-   * 提取无关的表达式
-   */
+  /** 提取无关的表达式 */
   private static void calculationOuter() {
     int a = 3;
     int b = 7;
@@ -144,5 +140,4 @@ public class MainClass {
     long endTime = System.nanoTime();
     System.out.println("已提取耗时：" + (endTime - stratTime));
   }
-
 }
